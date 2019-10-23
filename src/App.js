@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/header/header';
+import Footer from './components/footer/footer'
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="">
         <Header/>
-       
+    
       </header>
     </div>
   );
