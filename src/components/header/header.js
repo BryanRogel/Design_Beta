@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Scrollbars from 'react-scrollbars-custom';
 import styled, { css } from 'styled-components';
 
-class header extends Component{
+class Header extends Component{
     constructor (props){
         super(props)
         this.state = {
@@ -58,7 +58,7 @@ class header extends Component{
                 <div className="col-lg-2">
                     <img className="logo" src="/images/paga_poco_logo.png" />
                 </div>
-                <div className="col-lg-8 item">
+                <div className="col-lg-7 item">
                 <Scrollbars
                     style={{ height: 90, borderRadius: 5 }}
                     minimalThumbSize={50}
@@ -107,7 +107,7 @@ class header extends Component{
                             </div>
                         </ol>
                         <ol className="ol">
-                            <div className="cart">
+                            <div className="cart color-icon">
                                 <img src='/icons/cart.svg' height='30'></img>
                             </div>
                         </ol>
@@ -121,6 +121,7 @@ class header extends Component{
 const Nav = styled.nav`
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.21);
     display: flex;
+    position: sticky;
 
     .item {
         margin-top: 10px;
@@ -130,6 +131,7 @@ const Nav = styled.nav`
     }
     .item-name {
         font-size: 15px;
+        word-break: break-all;
         word-wrap: break-word;
     }  
     .photo {
@@ -184,4 +186,4 @@ const Line = styled.div`
     border-left-style: solid;
     border-color: #696969;
 `
-export default header;
+export default Header;
