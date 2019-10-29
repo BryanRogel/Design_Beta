@@ -42,7 +42,7 @@ class Footer extends Component {
 }
 
 const Wrapper = styled.footer`
-
+footer { display:block;clear:both;width:100%;height:auto;margin:30px auto 0px auto;padding:0px 20px 20px 20px;border-top:1px dashed #cccccc;font-size:13px;border-bottom:1px dashed #cccccc; }
 .logo {
 	display:block;
 	clear:both;
