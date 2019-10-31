@@ -3,15 +3,29 @@ import styled from 'styled-components';
 import { Icon, Button } from 'antd';
 import { blue } from 'ansi-colors';
 
-import Drawer from './components/MenuMobile'
-import Login from './components/Login'
+import MenuMobile from './components/MenuMobile'
+import LoginDrawer from './../login/LoginDrawer'
 
 class Header extends Component {
 
-    state = { 
-        menuVisible: false,
-        loginVisible: false
-    };
+    constructor(props) {
+        super(props)
+        this.state = { 
+            indexActive: 0,
+            menuVisible: false,
+            loginVisible: false
+        };
+    }
+    
+        componentWillUnmount() {
+            this.setState({indexActive: 0})
+        }
+    
+        createAccount = () => {
+            this.setState({
+                indexActive: 1,
+            });
+        };
 
     openMenu = () => {
         this.setState({
@@ -35,12 +49,13 @@ class Header extends Component {
 
     closeLogin = () => {
         this.setState({
-            loginVisible: false
+            loginVisible: false,
+            indexActive: 0
         });
     };
 
     render() {
-        const { menuVisible, loginVisible} = this.state
+        const { menuVisible, loginVisible, indexActive} = this.state
         return (
             <Nav>
                 <div className="wrapper no-vertical-margin">
@@ -85,8 +100,8 @@ class Header extends Component {
                     </div>
                 </div>
 
-                <Drawer menuVisible={menuVisible} closeMenu={this.closeMenu} />
-                <Login loginVisible={loginVisible} closeLogin={this.closeLogin} />
+                <MenuMobile menuVisible={menuVisible} closeMenu={this.closeMenu} />
+                <LoginDrawer loginVisible={loginVisible} closeLogin={this.closeLogin} indexActive={indexActive}/>
             </Nav >
         );
     }
@@ -99,7 +114,6 @@ const CloseButton = styled.div`
 `
 
 const Nav = styled.nav`
-
 margin-top: 10px;
 margin-right: 15px;
 display:block;

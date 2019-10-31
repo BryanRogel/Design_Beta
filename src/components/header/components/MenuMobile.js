@@ -16,7 +16,7 @@ class MenuMobile extends Component {
                     width='100%'
                     bodyStyle={{
                         backgroundColor: '#2f4b7d',
-                        height: '100%'
+                        height: 'auto'
                     }}
                     destroyOnClose={true}
                     >
